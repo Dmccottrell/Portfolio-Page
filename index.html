@@ -3,17 +3,21 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>My Portfolio - Home</title>
+		<title>Darryl McCottrell Portfolio - Home</title>
+		<!-- Link to Bootstrap for easy styling -->
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
 			rel="stylesheet" />
+		<!-- Link to custom CSS for additional styles -->
 		<link rel="stylesheet" href="css/styles.css" />
 	</head>
 	<body class="bg-dark text-light">
 		<!-- Navigation Bar -->
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#">My Portfolio</a>
+				<!-- Brand/logo name -->
+				<a class="navbar-brand" href="#">Darryl McCottrell</a>
+				<!-- Button for collapsing navbar on smaller screens -->
 				<button
 					class="navbar-toggler"
 					type="button"
@@ -24,12 +28,11 @@
 					aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
+				<!-- Navbar links -->
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav ms-auto">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="index.html"
-								>Home</a
-							>
+							<a class="nav-link active" href="index.html">Home</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="about.html">About Me</a>
@@ -54,44 +57,63 @@
 					center/cover;
 			">
 			<div class="text-center text-light">
-				<h1 class="display-4">Welcome to My Portfolio</h1>
+				<h1 class="display-4">Hi, I'm Darryl McCottrell</h1>
 				<p class="lead"
-					>I am a passionate Software Engineer. Let's build something amazing
-					together!</p
+					>Computer Science Graduate, Software Engineer, and IT Specialist</p
 				>
-				<a href="about.html" class="btn btn-primary">Learn More About Me</a>
+				<!-- Button to navigate to the About page -->
+				<a href="about.html" class="btn btn-primary mt-3"
+					>Learn More About Me</a
+				>
 			</div>
 		</section>
 
-		<!-- Scrollable Content -->
-		<section id="about" class="py-5">
+		<!-- Highlights Section -->
+		<section id="highlights" class="py-5">
 			<div class="container">
-				<h2 class="text-center mb-4">About Me</h2>
+				<h2 class="text-center mb-4">Career Highlights</h2>
 				<div class="row">
-					<div class="col-md-6">
-						<p
-							>Hi! I'm John Doe, a Software Engineer with expertise in
-							full-stack development. I have a passion for creating innovative
-							solutions with modern technologies.</p
-						>
+					<!-- Each column represents one highlight -->
+					<div class="col-md-4">
+						<div class="highlight-box text-center">
+							<h5>Ensured Compliance</h5>
+							<p
+								>Achieved PCI compliance for Mastercard programs under tight
+								deadlines.</p
+							>
+						</div>
 					</div>
-					<div class="col-md-6">
-						<img
-							src="assets/images/profile.jpg"
-							alt="Profile Picture"
-							class="img-fluid rounded-circle" />
+					<div class="col-md-4">
+						<div class="highlight-box text-center">
+							<h5>Leadership Excellence</h5>
+							<p
+								>Consistently entrusted with supervising projects and leading
+								teams effectively.</p
+							>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="highlight-box text-center">
+							<h5>Proven Adaptability</h5>
+							<p
+								>Transitioned roles dynamically to deliver critical objectives
+								on time.</p
+							>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Footer -->
+		<!-- Footer Section -->
 		<footer class="bg-dark text-center py-4">
-			<p>&copy; 2025 John Doe - All Rights Reserved</p>
+			<p>&copy; 2025 Darryl McCottrell - All Rights Reserved</p>
 		</footer>
 
+		<!-- Bootstrap JS and Popper.js for responsive navbar -->
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+		<!-- Link to custom JavaScript file -->
 		<script src="js/script.js"></script>
 	</body>
 </html>
