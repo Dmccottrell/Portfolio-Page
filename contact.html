@@ -8,10 +8,6 @@
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
 			rel="stylesheet" />
 		<link rel="stylesheet" href="css/styles.css" />
-		<!-- EmailJS SDK -->
-		<script
-			type="text/javascript"
-			src="https://cdn.emailjs.com/dist/email.min.js"></script>
 	</head>
 	<body class="bg-dark text-light">
 		<!-- Navbar -->
@@ -51,15 +47,14 @@
 		<section class="py-5">
 			<div class="container">
 				<h2 class="text-center mb-4">Contact Me</h2>
-				<form id="contactForm" onsubmit="sendEmail(event)">
+				<form id="contactForm">
 					<div class="mb-3">
 						<label for="name" class="form-label">Full Name</label>
 						<input
 							type="text"
 							class="form-control"
 							id="name"
-							placeholder="Enter your name"
-							required />
+							placeholder="Enter your name" />
 					</div>
 					<div class="mb-3">
 						<label for="email" class="form-label">Email Address</label>
@@ -67,8 +62,7 @@
 							type="email"
 							class="form-control"
 							id="email"
-							placeholder="Enter your email"
-							required />
+							placeholder="Enter your email" />
 					</div>
 					<div class="mb-3">
 						<label for="message" class="form-label">Message</label>
@@ -76,8 +70,7 @@
 							class="form-control"
 							id="message"
 							rows="4"
-							placeholder="Your message here"
-							required></textarea>
+							placeholder="Your message here"></textarea>
 					</div>
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</form>
@@ -101,40 +94,9 @@
 			<p>&copy; 2025 Darryl McCottrell - All Rights Reserved</p>
 		</footer>
 
-		<!-- EmailJS Script -->
-		<script type="text/javascript">
-			(function () {
-				emailjs.init("YOUR_USER_ID");
-			})();
-
-			function sendEmail(event) {
-				event.preventDefault();
-
-				const name = document.getElementById("name").value;
-				const email = document.getElementById("email").value;
-				const message = document.getElementById("message").value;
-
-				const templateParams = {
-					from_name: name,
-					from_email: email,
-					message: message,
-				};
-
-				emailjs
-					.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
-					.then(
-						function (response) {
-							alert("Message sent successfully!");
-							document.getElementById("contactForm").reset();
-						},
-						function (error) {
-							alert("Failed to send message: " + error.text);
-						},
-					);
-			}
-		</script>
-
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.5.0/dist/email.min.js"></script>
+		<script src="js/script.js"></script>
 	</body>
 </html>
