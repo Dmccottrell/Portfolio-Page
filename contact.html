@@ -9,10 +9,17 @@
 			rel="stylesheet" />
 		<link rel="stylesheet" href="css/styles.css" />
 
-		<!-- Include the updated EmailJS SDK -->
+		<!-- Include the correct EmailJS SDK -->
 		<script
 			type="text/javascript"
 			src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+		<!-- Initialize EmailJS with your public key -->
+		<script type="text/javascript">
+			(function () {
+				emailjs.init("WM3UeOGX9YYa3NdpV"); // Replace with your public key
+			})();
+		</script>
 	</head>
 	<body class="bg-dark text-light">
 		<!-- Navbar -->
@@ -99,52 +106,37 @@
 			<p>&copy; 2025 Darryl McCottrell - All Rights Reserved</p>
 		</footer>
 
-		<!-- Scripts -->
-		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
-		<!-- EmailJS Script -->
-		<script type="text/javascript">
-			// Initialize EmailJS with your public key
-			emailjs.init("WM3UeOGX9YYa3NdpV"); // Your actual public key
-
-			// Handle form submission
+		<script>
+			// Form submission event handler
 			document
 				.getElementById("contactForm")
 				.addEventListener("submit", function (event) {
-					event.preventDefault();
+					event.preventDefault(); // Prevent the default form submission
 
-					// Get the form values
+					// Collect form data
 					const name = document.getElementById("name").value;
 					const email = document.getElementById("email").value;
 					const message = document.getElementById("message").value;
 
-					// Validate the form
-					if (!name || !email || !message) {
-						alert("Please fill in all fields.");
-						return;
-					}
-
-					// Create the template parameters
-					const templateParams = {
-						from_name: name,
-						from_email: email,
-						message: message,
-					};
-
-					// Send the email using the Darryl_email template
-					emailjs.send("service_ji6e7bl", "Darryl_email", templateParams).then(
-						function (response) {
-							alert("Message sent successfully!");
-						},
-						function (error) {
-							alert("Error sending message: " + error.text);
-						},
-					);
-
-					// Optionally reset the form after submission
-					document.getElementById("contactForm").reset();
+					// Send email via EmailJS
+					emailjs
+						.send("service_ji6e7bl", "Darryl_email", {
+							name: name,
+							email: email,
+							message: message,
+						})
+						.then(
+							function (response) {
+								alert("Message sent successfully!");
+							},
+							function (error) {
+								alert("Error sending message: " + JSON.stringify(error));
+							},
+						);
 				});
 		</script>
+
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 	</body>
 </html>
