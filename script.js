@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
 emailjs.init("your_user_id"); // Replace "your_user_id" with your EmailJS user ID
 
 // Handle form submission
+// Initialize EmailJS with your public key
+emailjs.init("WM3UeOGX9YYa3NdpV"); // Your actual public key
+
+// Handle form submission
 document
 	.getElementById("contactForm")
 	.addEventListener("submit", function (event) {
@@ -55,7 +59,7 @@ document
 		};
 
 		// Send the email using the Darryl_email template
-		emailjs.send("service_id", "Darryl_email", templateParams).then(
+		emailjs.send("service_ji6e7bl", "Darryl_email", templateParams).then(
 			function (response) {
 				alert("Message sent successfully!");
 			},
