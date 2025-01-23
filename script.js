@@ -26,3 +26,44 @@ document.addEventListener("DOMContentLoaded", () => {
 	// Observe each image on the page
 	images.forEach((img) => fadeInObserver.observe(img));
 });
+
+// Initialize EmailJS
+emailjs.init("your_user_id"); // Replace "your_user_id" with your EmailJS user ID
+
+// Handle form submission
+document
+	.getElementById("contactForm")
+	.addEventListener("submit", function (event) {
+		event.preventDefault();
+
+		// Get the form values
+		const name = document.getElementById("name").value;
+		const email = document.getElementById("email").value;
+		const message = document.getElementById("message").value;
+
+		// Validate the form
+		if (!name || !email || !message) {
+			alert("Please fill in all fields.");
+			return;
+		}
+
+		// Create the template parameters
+		const templateParams = {
+			from_name: name,
+			from_email: email,
+			message: message,
+		};
+
+		// Send the email using the Darryl_email template
+		emailjs.send("service_id", "Darryl_email", templateParams).then(
+			function (response) {
+				alert("Message sent successfully!");
+			},
+			function (error) {
+				alert("Error sending message: " + error.text);
+			},
+		);
+
+		// Optionally reset the form after submission
+		document.getElementById("contactForm").reset();
+	});
